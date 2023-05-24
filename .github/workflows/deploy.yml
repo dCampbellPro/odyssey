@@ -21,7 +21,7 @@ jobs:
           pnpm run build
 
       - name: Deploy
-        uses: dCampbellPro/github-pages-deploy-action@v4
+        uses: dCampbellPro/actions-gh-pages@v4
         with:
           folder: build
           branch: gh-pages
