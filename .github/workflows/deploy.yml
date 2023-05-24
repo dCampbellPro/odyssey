@@ -1,0 +1,27 @@
+name: Build and Deployo
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build-and-deploy:
+  runs-on: ubuntu-latest
+  concurrency: ci-${{github.ref}}
+  steps
+    - name: Checkout
+      uses: actions/checkoukt@v2
+
+    - name: Configure Node
+      uses: actions/setup-node@v1
+      with:
+        node-version: '16.12.0'
+    - name: Install
+      run: |
+        pnpm ci
+        pnpm run build
+
+    - name: Deploy
+      uses: dCampbellPro/github-pages-deploy-action@v4
+      with:
+        folder: build
+        branch: gh-pages
