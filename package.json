@@ -11,13 +11,10 @@
 		"dev": "astro dev",
 		"start": "astro dev",
 		"build": "astro build",
-		"preview": "astro preview",
-		"predeploy": "cd theme && pnpm run build",
 		"deploy": "gh-pages -d build",
 		"format": "npx prettier -w ."
 	},
 	"devDependencies": {
-		"cypress": "^12.12.0",
-		"gh-pages": "^5.0.0"
+		"cypress": "^12.12.0"
 	}
 }
