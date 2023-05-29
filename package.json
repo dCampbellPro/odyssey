@@ -11,6 +11,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@replayio/cypress": "^0.5.15",
     "astro": "^2.4.1"
   },
   "devDependencies": {

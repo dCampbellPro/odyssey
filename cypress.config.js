@@ -1,7 +1,15 @@
-import { defineConfig } from 'cypress'
+// cypress.config.js
+import { defineConfig } from "cypress";
+import cypressReplay from "@replayio/cypress";
 
-export default defineConfig({
+module.exports = defineConfig({
   e2e: {
-    supportFile: false
-  }
-})
+    setupNodeEvents(on, config) {
+      // Adds replay-firefox (macOS, linux) and replay-chromium (linux)
+      // browsers and hooks into Cypress lifecycle methods to capture test
+      // metadata and results
+      cypressReplay(on, config);
+      return config;
+    },
+  },
+});
