@@ -47,6 +47,7 @@ jobs:
         uses: cypress-io/github-action@v5
         with:
           browser: replay-firefox
+          start: pnpm start
 
       - name: Upload replays
         if: always()
