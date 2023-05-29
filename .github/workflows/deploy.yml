@@ -46,6 +46,8 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v5
         with:
+          run: pnpm start
+          run: pnpm test
           browser: replay-firefox
 
       - name: Upload replays
