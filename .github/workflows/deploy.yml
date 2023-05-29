@@ -47,7 +47,7 @@ jobs:
         with:
           browser: "Replay Firefox"
           start: pnpm start
-          wait-on: 'http://localhost:3000/odyssey'
+          wait-on: 'http://localhost:3000/odyssey/'
         env:
           RECORD_ALL_CONTENT: 1
           RECORD_REPLAY_METADATA_FILE: /tmp/replay-metadata
