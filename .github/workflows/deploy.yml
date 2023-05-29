@@ -48,12 +48,16 @@ jobs:
           start: pnpm start
           test: pnpm test
           browser: firefox
+      - uses: replayio/action-cypress@v0.2.7
+        with:
+          # An API key (usually a Team API Key) to use to upload replays.
+          # Configure this via GitHub repo settings.
+          api-key: ${{ secrets.RECORD_REPLAY_API_KEY }}
+          browser: 'replay-firefox'
+          public: true
+          # When true, replays of both passed and failed tests are uploaded
+          upload-all: true
 
-  replay-test:
-    - uses: replayio/action-cypress@v0.2.7
-    with:
-      api-key: ${{ secrets.RECORD_REPLAY_API_KEY }}
-      browser: 'replay-firefox'
 
   deploy:
     needs: build
