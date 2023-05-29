@@ -49,6 +49,12 @@ jobs:
           test: pnpm test
           browser: firefox
 
+  replay-test:
+    - uses: replayio/action-cypress@v0.2.7
+    with:
+      api-key: ${{ secrets.RECORD_REPLAY_API_KEY }}
+      browser: 'replay-firefox'
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
