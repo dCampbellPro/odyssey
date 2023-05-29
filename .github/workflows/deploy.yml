@@ -45,8 +45,6 @@ jobs:
         run: pnpm install
       - name: Cypress Tests
         uses: cypress-io/github-action@v5
-        run: pnpm start
-        run: pnpm test
         with:
           browser: replay-firefox
 
