@@ -60,7 +60,7 @@ jobs:
 
 
   deploy:
-    needs: build
+    needs: cypress-run
     runs-on: ubuntu-latest
     environment:
       name: github-pages
